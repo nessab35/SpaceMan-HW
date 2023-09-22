@@ -109,5 +109,5 @@ def guessed_word():#need to add into parameters
 
 
 #These function calls that will start the game
-secret_word = load_word()
-spaceman(secret_word)
+    secret_word = load_word()
+    spaceman(secret_word)
