@@ -13,6 +13,11 @@ def load_word():
     secret_word = random.choice(words_list)
     return secret_word
 
+    # Length of Word
+stored_secret_word = load_word()
+secret_word_length = len(stored_secret_word)
+print(f"The secret word contains {secret_word_length} letters", stored_secret_word)
+
 def is_word_guessed(secret_word, letters_guessed):
     for letters in secret_word:
         if letters not in letters_guessed:
@@ -37,7 +42,7 @@ def get_guessed_word(secret_word, letters_guessed):
     '''
 
     #TODO: Loop through the letters in secret word and build a string that shows the letters that have been guessed correctly so far that are saved in letters_guessed and underscores for the letters that have not been guessed yet
-
+    
     pass
 
 
@@ -78,11 +83,13 @@ print(f'''
 
     #TODO: Ask the player to guess one letter per round and check that it is only one letter
 while (game_running):
-    single_letter = False
-    while (single_letter == False):
-        print("Enter in 1 letter:")
-
-    
+    letter = input("Enter in a letter:")
+    if len(letter) == 1 and all_letters:
+        break
+    else:
+        print("That's not a single letter, try again!")
+print(f"You entered:{letter}")
+        
     #TODO: Check if the guessed letter is in the secret or not and give the player feedback
 def player_feedback(guessed_letters, secret_word):
     if guessed_letters in secret_word:
@@ -92,7 +99,8 @@ def player_feedback(guessed_letters, secret_word):
         return False
 
     #TODO: show the guessed word so far
-
+def guessed_word():#need to add into parameters
+    
     #TODO: check if the game has been won or lost
 
 
